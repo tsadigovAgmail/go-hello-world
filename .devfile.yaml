@@ -9,7 +9,7 @@ components:
         - name: 8080-tcp
           targetPort: 8585
       memoryLimit: 2Gi
-      mountSources: true
+      cpuLimit: 1
 commands:
   - id: run
     exec:
