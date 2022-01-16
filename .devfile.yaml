@@ -13,25 +13,10 @@ components:
 commands:
   - id: run
     exec:
-      label: "1.1 Run outyet"
       component: go-cli
-      workingDir: ${PROJECTS_ROOT}/go-hello-world/
       commandLine: "go run main.go"
-      group:
-        kind: run
   - id: stop
     exec:
-      label: "1.2 Stop outyet"
       component: go-cli
       commandLine: "kill $(pidof go)"
-      group:
-        kind: run
-  - id: test
-    exec:
-      label: "1.3 Test outyet"
-      component: go-cli
-      workingDir: ${PROJECTS_ROOT}/go-hello-world/
-      commandLine: "go test"
-      group:
-        kind: test
 
