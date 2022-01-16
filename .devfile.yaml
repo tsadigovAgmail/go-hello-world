@@ -6,8 +6,8 @@ components:
     container:
       image: quay.io/devfile/universal-developer-image:ubi8-112f94a
       endpoints:
-        - name: 8080-tcp
-          targetPort: 8585
+        - name: webapp
+          targetPort: 8080
       memoryLimit: 2Gi
       cpuLimit: 1
 commands:
