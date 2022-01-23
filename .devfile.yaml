@@ -15,8 +15,10 @@ commands:
     exec:
       component: go-cli
       commandLine: "go run main.go"
+      workingDir: $PROJECT_SOURCE
   - id: stop
     exec:
       component: go-cli
       commandLine: "kill $(pidof go)"
+      workingDir: $PROJECT_SOURCE
 
