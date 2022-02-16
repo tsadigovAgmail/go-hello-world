@@ -8,8 +8,8 @@ components:
       endpoints:
         - name: webapp
           targetPort: 8080
-      memoryLimit: 1Gi
-      cpuLimit: 100m
+      memoryLimit: 4Gi
+      cpuLimit: 1000m
   - name: projects
     volume:
       size: 3Gi
