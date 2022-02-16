@@ -4,12 +4,12 @@ metadata:
 components:
   - name: go-cli
     container:
-      image: quay.io/devfile/universal-developer-image:ubi8-112f94a
+      image: quay.io/devfile/universal-developer-image:ubi8-0e189d9
       endpoints:
         - name: webapp
           targetPort: 8080
-      memoryLimit: 2Gi
-      cpuLimit: 1000m
+      memoryLimit: 7Gi
+      cpuLimit: 3500m
 commands:
   - id: run
     exec:
