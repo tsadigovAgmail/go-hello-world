@@ -8,8 +8,8 @@ components:
       endpoints:
         - name: webapp
           targetPort: 8080
-      memoryLimit: 3Gi
-      cpuLimit: 1500m
+      memoryLimit: 4Gi
+      cpuLimit: 500m
 commands:
   - id: run
     exec:
