@@ -9,7 +9,7 @@ components:
         - name: webapp
           targetPort: 8080
       memoryLimit: 4Gi
-      cpuLimit: '1.5'
+      cpuLimit: "2"
   - name: projects
     volume:
       size: 3Gi
