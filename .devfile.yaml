@@ -1,6 +1,8 @@
 schemaVersion: 2.1.0
 metadata:
   name: go-helloworld
+attributes:
+  controller.devfile.io/storage-type: ephemeral
 components:
   - name: go-cli
     container:
@@ -10,8 +12,7 @@ components:
           targetPort: 8080
       memoryLimit: 4Gi
   - name: projects
-    volume:
-      size: 3Gi
+    volume: {ephemeral: true}
 commands:
   - id: run
     exec:
