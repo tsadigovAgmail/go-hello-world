@@ -12,7 +12,7 @@ components:
           targetPort: 8080
       memoryLimit: 4Gi
       memoryRequest: 256Mi
-      cpuLimit: 600m
+      cpuLimit: 500m
       cpuRequest: 30m      
   - name: projects
     volume: {ephemeral: true}
