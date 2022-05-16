@@ -11,6 +11,9 @@ components:
         - name: webapp
           targetPort: 8080
       memoryLimit: 4Gi
+      memoryRequest: 256Mi
+      cpuLimit: 1000m
+      cpuRequest: 30m      
   - name: projects
     volume: {ephemeral: true}
 commands:
