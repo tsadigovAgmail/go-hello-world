@@ -6,7 +6,7 @@ attributes:
 components:
   - name: go-cli
     container:
-      image: quay.io/devfile/universal-developer-image:ubi8-0e189d9
+      image: quay.io/devfile/universal-developer-image:ubi8-latest
       endpoints:
         - name: webapp
           targetPort: 8080
@@ -25,4 +25,8 @@ commands:
       component: go-cli
       commandLine: "kill $(pidof go)"
       workingDir: $PROJECT_SOURCE
-
+  - id: build
+    exec:
+      component: go-cli
+      commandLine: "go main.go"
+      workingDir: $PROJECT_SOURCE
