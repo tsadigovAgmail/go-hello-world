@@ -1,29 +1,13 @@
 schemaVersion: 2.1.0
 metadata:
   name: sfdx-helloworld
-attributes:
-  controller.devfile.io/storage-type: ephemeral
+  language: sfdx
 components:
-  - name: sfdx
-    container:
+  - container:
+      endpoints:
+        - name: http
+          targetPort: 8080
       image: salesforce/salesforcedx
-      memoryLimit: 4Gi
-      memoryRequest: 256Mi
-  - name: projects
-    volume: {ephemeral: true}
-commands:
-  - id: create
-    exec:
-      component: sfdx
-      commandLine: "sfdx force:project:create -n sampleproj"
-      workingDir: $PROJECT_SOURCE
-  - id: pull
-    exec:
-      component: sfdx
-      commandLine: "sfdx force:source:pull"
-      workingDir: $PROJECT_SOURCE
-  - id: push
-    exec:
-      component: sfdx
-      commandLine: "sfdx force:source:push"
-      workingDir: $PROJECT_SOURCE
+      memoryLimit: 1024Mi
+      mountSources: true
+    name: runtime
