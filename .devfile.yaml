@@ -1,32 +1,29 @@
 schemaVersion: 2.1.0
 metadata:
-  name: go-helloworld
+  name: sfdx-helloworld
 attributes:
   controller.devfile.io/storage-type: ephemeral
 components:
-  - name: go-cli
+  - name: sfdx
     container:
       image: salesforce/salesforcedx
-      endpoints:
-        - name: webapp
-          targetPort: 8080
       memoryLimit: 4Gi
       memoryRequest: 256Mi
   - name: projects
     volume: {ephemeral: true}
 commands:
-  - id: run
+  - id: create
     exec:
-      component: go-cli
-      commandLine: "go run main.go"
+      component: sfdx
+      commandLine: "sfdx force:project:create -n sampleproj"
       workingDir: $PROJECT_SOURCE
-  - id: stop
+  - id: pull
     exec:
-      component: go-cli
-      commandLine: "kill $(pidof go)"
+      component: sfdx
+      commandLine: "sfdx force:source:pull"
       workingDir: $PROJECT_SOURCE
-  - id: build
+  - id: push
     exec:
-      component: go-cli
-      commandLine: "go main.go"
+      component: sfdx
+      commandLine: "sfdx force:source:push"
       workingDir: $PROJECT_SOURCE
