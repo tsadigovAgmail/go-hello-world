@@ -6,7 +6,7 @@ attributes:
 components:
   - name: go-cli
     container:
-      image: quay.io/devfile/universal-developer-image:ubi8-latest
+      image: salesforce/salesforcedx
       endpoints:
         - name: webapp
           targetPort: 8080
